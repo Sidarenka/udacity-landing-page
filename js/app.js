@@ -56,7 +56,7 @@ function isInViewport(e) {
         bounding.top >= -250
         &&
         bounding.left >= 0 &&
-        bounding.bottom <= 130 + (window.innerHeight || document.documentElement.clientHeight) 
+        bounding.bottom <= 200 + (window.innerHeight || document.documentElement.clientHeight) 
         &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
