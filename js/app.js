@@ -1,52 +1,12 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
+// Define Global Variables
 
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
-
-/**
- * Define Global Variables
- * 
-*/
 const allSections = document.querySelectorAll('section');
 const navbarList = document.getElementById('navbar__list');
 const navbarItems = document.getElementById('nav__item');
 let navbarHeight = document.getElementsByClassName('page__header');
 const mobileMenu = document.querySelector('#mobile__menu');
 
-
-
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
+// Build navigation
 
 const dynamicMenu = (section) => {
     for (section of allSections) {
@@ -63,26 +23,12 @@ const dynamicMenu = (section) => {
 }
 dynamicMenu();
 
-
 // Add class 'active' to mobile menu 
 
 mobileMenu.addEventListener('click', function() {
     mobileMenu.classList.toggle('is__active');
     navbarList.classList.toggle('active');
-
-
 })
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
 
 // Scroll to the header section on logo click
 const scrollToHeader = () => {
@@ -93,7 +39,6 @@ const scrollToHeader = () => {
   }
   scrollToHeader();
   
-
 // Scroll to section on link click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -117,7 +62,7 @@ function isInViewport(e) {
     );
 };
 
-// Highlight corresponding section of navbar if section is in viewport
+// Highlight corresponding section of navigation if section is in viewport
 const navHighlight = document.querySelectorAll('li');
 
 function highlightNav(){
@@ -132,7 +77,6 @@ document.addEventListener('scroll', function(){
 }
 );
 
-
 // Highlight corresponding section if section is in viewport
 function sectionActive(){
     for (let i=0; i<allSections.length; i++) {
@@ -145,8 +89,4 @@ document.addEventListener('scroll', function(){
     sectionActive();
 }
 );
-
-
-
-
 
